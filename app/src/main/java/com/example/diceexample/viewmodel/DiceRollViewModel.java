@@ -1,4 +1,4 @@
-package com.example.diceexample;
+package com.example.diceexample.viewmodel;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;

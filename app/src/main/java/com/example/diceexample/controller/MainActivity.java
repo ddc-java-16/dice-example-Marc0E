@@ -1,15 +1,13 @@
-package com.example.diceexample;
+package com.example.diceexample.controller;
 
 import android.util.Log;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.diceexample.viewmodel.DiceRollViewModel;
 import com.example.diceexample.databinding.ActivityMainBinding;
 import com.example.diceexample.model.Roll;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 

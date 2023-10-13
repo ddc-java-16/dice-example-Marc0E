@@ -1,6 +1,7 @@
 package com.example.diceexample.service;
 
 import com.example.diceexample.model.Roll;
+import com.example.diceexample.service.DiceServiceProxy;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
