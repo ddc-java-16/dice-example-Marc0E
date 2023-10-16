@@ -1,13 +1,13 @@
 package com.example.diceexample.controller;
 
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.diceexample.R;
+import com.example.diceexample.adapter.RollsAdapter;
 import com.example.diceexample.viewmodel.DiceRollViewModel;
 import com.example.diceexample.databinding.ActivityMainBinding;
-import com.example.diceexample.model.Roll;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 //    first.setOnClickListener();
 //    OnClickListener listener = (viewClicked) -> Log.d(getClass().getSimpleName(), ((Button) viewClicked).getText() + "clicked");
     //findViewById(R.id.third).setOnClickListener(listener); the way it was before.
-    binding.roll.setOnClickListener((v) -> viewModel.rollDice(20,60));
+    binding.roll.setOnClickListener((v) -> viewModel.rollDice(50,6));
     setupViewModel();
   }
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     viewModel = new ViewModelProvider(this).get(DiceRollViewModel.class);
     viewModel.getDiceRoll()
         .observe(this, (rolls) -> {
-          ArrayAdapter<Roll> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, rolls);
+          RollsAdapter adapter = new RollsAdapter(this, rolls);
           binding.rollValues.setAdapter(adapter);
         });
     viewModel.getThrowable()

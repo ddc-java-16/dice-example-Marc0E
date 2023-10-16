@@ -5,13 +5,18 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.jetbrains.annotations.NotNull;
 
+
 public class Roll {
+
+  public int getValue() {
+    return value;
+  }
+
   @Expose
   private int value;
 
 
   @NonNull
-  @NotNull
   @Override
   public String toString() {
     return String.valueOf(value);
